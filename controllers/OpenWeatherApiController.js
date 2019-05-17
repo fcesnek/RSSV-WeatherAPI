@@ -18,7 +18,7 @@ module.exports = {
         windSpeed: apiResponse.wind.speed,
         weatherDesc: apiResponse.weather[0].main
       }
-let strResponse = `${response.location},${response.temperature},${response.windSpeed},${response.weatherDesc}`
+let strResponse = `!${response.location},${response.temperature},${response.windSpeed},${response.weatherDesc}`
       res.status(200).send(strResponse)
     } catch (err) {
       res.status(500).send({
