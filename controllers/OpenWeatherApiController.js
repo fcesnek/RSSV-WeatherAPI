@@ -18,7 +18,8 @@ module.exports = {
         windSpeed: apiResponse.wind.speed,
         weatherDesc: apiResponse.weather[0].main
       }
-      res.status(200).send(response)
+let strResponse = `${response.location},${response.temperature},${response.windSpeed},${response.weatherDesc}`
+      res.status(200).send(strResponse)
     } catch (err) {
       res.status(500).send({
         error: `Error while fetching data from Azure API.`
